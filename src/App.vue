@@ -1,11 +1,19 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import MenuBar from '@/component/MenuBar.vue'
+import ParticipantGroup from '@/component/ParticipantGroup.vue'
+import TheChallenge from '@/component/TheChallenge.vue'
+import TheSchedule from '@/component/TheSchedule.vue'
+import TitleBlock from '@/component/TitleBlock.vue'
+import JoinUs from './component/JoinUs.vue'
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <menu-bar />
+  <title-block />
+  <the-challenge />
+  <participant-group />
+  <the-schedule />
+  <join-us />
 </template>
 
 <style scoped></style>

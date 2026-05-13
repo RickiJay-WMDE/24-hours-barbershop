@@ -1,0 +1,140 @@
+{
+  "menu": {
+    "about": "About",
+    "participate": "Participate",
+    "schedule": "Schedule",
+    "register": "Register"
+  },
+  "title": {
+    "title": "24 Hours of Barbershop",
+    "location": "Berlin",
+    "date": "11–12 September 2026",
+    "tagline": "Arrange all night. Rehearse all day. Go on stage."
+  },
+  "challenge": {
+    "title": "The Challenge",
+    "subtitle": {
+      "one": "No Prep.",
+      "two": "Just 24 Hours."
+    },
+    "copy": "On Friday evening in Berlin, arrangers draw a song and a quartet from a hat. The clock starts. By 8pm the next day, that music will be performed live — written, rehearsed, and staged in under 24 hours."
+  },
+  "participants": {
+    "arrangers": {
+      "spots": "5 Spots Avaialbe",
+      "title": "Arrangers",
+      "copy": [
+        "You draw a song and a quartet at random on Friday evening. Spend an hour getting to know their voices, then head off to write. A dedicated arranging space — tables, side rooms, good coffee — is yours for the night.",
+        "Lead sheets in MuseScore + MusicXML prepared for every song. Write in whatever software you like. We print and deliver by 8am.",
+        "Strong recommendation: finish a complete, singable arrangement first, then add embellishments. Remember, the singers have 12 hours to put this together. "
+      ]
+    },
+    "singers": {
+      "spots": "20 spots — quartet or individual",
+      "title": "Singers",
+      "copy": [
+        "Register as a complete quartet, or come solo — we'll form you into quartets on Friday evening. We'll have treble, mixed, and bass ranges. You meet your arranger, share your range and vibe, then the night is yours.",
+        "At 8am Saturday, your arrangement arrives. One intense, structured day of rehearsal — individual prep, section work, ensemble runs, arranger coaching in the afternoon.",
+        "Focus on the harmony, not memorisation. Sheet music is allowed on stage."
+      ]
+    }
+  },
+  "schedule": {
+    "title": "Hour by hour",
+    "everyone": "Everyone",
+    "arrangers": "Arrangers",
+    "singers": "Singers",
+    "events": {
+      "gathering": {
+        "title": "Gathering",
+        "copy": "Meet, mingle, form quartets for individual singers "
+      },
+      "drawing": {
+        "title": "The Drawing",
+        "copy": ["Arrangers pull a song and a quartet from a hat", "Tagging sessions begin"]
+      },
+      "begin": {
+        "title": "The Night Begins",
+        "copy": [
+          "Arrangers: pizza, coffee, a blank page",
+          "Singers: dinner and tag scavenger hunt — details TBA"
+        ]
+      },
+      "tag_stop": { "title": "Tagging Stop", "copy": "Rehearsal starts in 8 hours, please sleep" },
+      "pancake_break": {
+        "title": "Pancake Break",
+        "copy": [
+          "Mandatory break, then back to work",
+          "Optional feedback with your fellow arrangers"
+        ]
+      },
+      "done": {
+        "title": "Pencils Down",
+        "copy": [
+          "PDFs, notes, learning tracks delivered",
+          "Singers: Rehearsal rooms open. Good luck and swift learning!",
+          "Arrangers: sleep"
+        ]
+      },
+      "rehearsal_start": { "title": "Full Day of Rehearsal" },
+      "prep": {
+        "title": "Individual Prep",
+        "copy": "Listen, mark difficult spots, warm up voices"
+      },
+      "sectionals": { "title": "Section Rehearsals", "copy": "Learn notes by voice parts" },
+      "break": { "title": "Break" },
+      "ensemble": {
+        "title": "Ensemble Rehearsal",
+        "copy": "Crash-through arrangements, find points of coordination between parts, tune chords"
+      },
+      "record": { "title": "Record & Review Run-Through" },
+      "lunch": { "title": "Lunch Break" },
+      "interpretation": {
+        "title": "Musical Interpretation",
+        "copy": "Dynamics, phrasing, story, performance"
+      },
+      "pippin": {
+        "title": "Arranger Joins Rehearsal",
+        "copy": " Coach the arrangement, fix issues, run it "
+      },
+      "polish": { "title": "Performance polish & full run-throughs" },
+      "concert": {
+        "title": "concert",
+        "copy": "The curtain goes up. Everything written, learned, and performed inside 24 hours."
+      }
+    }
+  },
+  "register": {
+    "title": {
+      "pippin": "Join Us",
+      "berlin": "in Berlin"
+    },
+    "open": "Open to barbershop arrangers and singers of all experience levels. Come as a complete quartet, as a solo singer, or as an arranger ready for the most intense night of your writing life.",
+    "capacity": {
+      "limit": "Capacity is strictly limited:",
+      "arrangers": "5 arrangers",
+      "and": "and",
+      "singers": "20 singers (5 quartets)",
+      "confirmation": "Confirmations sent by"
+    },
+    "questions": "Questions?",
+    "fee": {
+      "fee": "Fee:",
+      "per": "per person — covering Friday dinner, venue, and materials."
+    },
+    "now": "Register Now",
+    "countdown": {
+      "days": "Days",
+      "hours": "Hours",
+      "mins": "Mins",
+      "secs": "Secs",
+      "close": "until registration closes"
+    },
+    "deadline": "Deadline",
+    "dates": {
+      "confirm": "Confirm",
+      "by": "by",
+      "event": "Event"
+    }
+  }
+}
