@@ -6,23 +6,23 @@ const { t } = useI18n()
 
 <template>
   <v-container class="title-container">
-    <h1 class="header-text">{{ t('title.title') }}</h1>
+    <h1 class="center header-text white-text">{{ t('title.title') }}</h1>
     <v-container class="setting header-text dim-text mx-0 mb-4 pa-0">
       <div class="location ma-0 pa-0">{{ t('title.location') }}</div>
       <div class="ma-0 pa-0">&middot;</div>
       <div class="date shrink ma-0 pa-0">{{ t('title.date') }}</div>
     </v-container>
-    <v-container class="tagline dim-text ma-0 pa-0">{{ t('title.tagline') }}</v-container>
+    <v-container class="tagline center body-text dim-text ma-0 pa-0">
+      {{ t('title.tagline') }}
+    </v-container>
   </v-container>
 </template>
 
 <style lang="scss">
 .title-container {
   h1 {
-    text-align: center;
     font-size: clamp(4.5rem, 13vw, 10rem);
     line-height: 1.05;
-    color: #fff;
     text-shadow:
       0 0 4px #fff,
       0 0 10px #fff,
@@ -51,14 +51,8 @@ const { t } = useI18n()
     }
   }
   .tagline {
-    font-family:
-      Default Sans Mono,
-      monospace;
     font-size: 1.05rem;
-    text-align: center;
-    font-weight: 400;
     line-height: 1.72;
-    // letter-spacing: 0.12rem;
   }
 }
 </style>

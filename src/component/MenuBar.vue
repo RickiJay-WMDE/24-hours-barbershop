@@ -38,7 +38,7 @@ const { t } = useI18n()
       <v-btn
         variant="outlined"
         density="compact"
-        class="menu-item header-text external-menu-item"
+        class="menu-item external-menu-item header-text red-text"
         href="https://pretix.eu/24hrsbarbershop/2026/"
         target="_blank"
       >
@@ -54,7 +54,9 @@ const { t } = useI18n()
   flex-flow: row nowrap;
   justify-content: space-between;
   padding: 0.2rem 1rem;
-  background-color: #080809;
+  background-color: rgba(8, 8, 9, 0.93);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   .menu-right {
     display: flex;
     flex-flow: row nowrap;
@@ -68,7 +70,6 @@ const { t } = useI18n()
       letter-spacing: 0.12em;
     }
     .external-menu-item {
-      color: #ff2a1a;
       border-radius: 9999px;
     }
   }
