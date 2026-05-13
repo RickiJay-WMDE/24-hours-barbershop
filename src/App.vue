@@ -21,5 +21,6 @@ import JoinUs from './component/JoinUs.vue'
 <style lang="scss">
 .application {
   background-color: #080809;
+  padding: 7rem 2rem 6rem;
 }
 </style>
