@@ -11,19 +11,34 @@ const { t } = useI18n()
       <v-img :src="logo" height="2.8rem" :width="95" />
     </a>
     <v-container class="menu-right shrink pa-0 ma-0">
-      <v-btn variant="plain" density="compact" class="menu-item pa-0 ma-0" href="#concept">
+      <v-btn
+        variant="plain"
+        density="compact"
+        class="menu-item header-text pa-0 ma-0"
+        href="#concept"
+      >
         {{ t('menu.about') }}
       </v-btn>
-      <v-btn variant="plain" density="compact" class="menu-item pa-0 ma-0" href="#participants">
+      <v-btn
+        variant="plain"
+        density="compact"
+        class="menu-item header-text pa-0 ma-0"
+        href="#participants"
+      >
         {{ t('menu.participate') }}
       </v-btn>
-      <v-btn variant="plain" density="compact" class="menu-item pa-0 ma-0" href="#schedule">
+      <v-btn
+        variant="plain"
+        density="compact"
+        class="menu-item header-text pa-0 ma-0"
+        href="#schedule"
+      >
         {{ t('menu.schedule') }}
       </v-btn>
       <v-btn
         variant="outlined"
         density="compact"
-        class="menu-item external-menu-item"
+        class="menu-item header-text external-menu-item"
         href="https://pretix.eu/24hrsbarbershop/2026/"
         target="_blank"
       >
@@ -48,13 +63,9 @@ const { t } = useI18n()
     gap: 2rem;
     padding: 1rem;
     .menu-item {
-      font-family:
-        Tilt Neon,
-        cursive;
       font-size: 0.7rem;
       font-weight: 400;
       letter-spacing: 0.12em;
-      text-transform: uppercase;
     }
     .external-menu-item {
       color: #ff2a1a;

@@ -23,4 +23,13 @@ import JoinUs from './component/JoinUs.vue'
   background-color: #080809;
   padding: 7rem 2rem 6rem;
 }
+.header-text {
+  text-transform: uppercase;
+  font-family:
+    Tilt Neon,
+    cursive;
+}
+.dim-text {
+  color: #a0a0b4;
+}
 </style>

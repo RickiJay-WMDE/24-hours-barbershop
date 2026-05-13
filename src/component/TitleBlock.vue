@@ -6,13 +6,13 @@ const { t } = useI18n()
 
 <template>
   <v-container class="title-container">
-    <h1>{{ t('title.title') }}</h1>
-    <v-container class="setting mx-0 mb-4 pa-0">
+    <h1 class="header-text">{{ t('title.title') }}</h1>
+    <v-container class="setting header-text dim-text mx-0 mb-4 pa-0">
       <div class="location ma-0 pa-0">{{ t('title.location') }}</div>
       <div class="ma-0 pa-0">&middot;</div>
       <div class="date shrink ma-0 pa-0">{{ t('title.date') }}</div>
     </v-container>
-    <v-container class="tagline ma-0 pa-0">{{ t('title.tagline') }}</v-container>
+    <v-container class="tagline dim-text ma-0 pa-0">{{ t('title.tagline') }}</v-container>
   </v-container>
 </template>
 
@@ -20,10 +20,6 @@ const { t } = useI18n()
 .title-container {
   h1 {
     text-align: center;
-    text-transform: uppercase;
-    font-family:
-      Tilt Neon,
-      cursive;
     font-size: clamp(4.5rem, 13vw, 10rem);
     line-height: 1.05;
     color: #fff;
@@ -43,13 +39,9 @@ const { t } = useI18n()
     flex-flow: row nowrap;
     justify-content: center;
     gap: 1rem;
-    font-family:
-      Tilt Neon,
-      cursive;
     font-weight: 400;
     font-size: clamp(0.85rem, 1.8vw, 1.1rem);
     letter-spacing: 0.22em;
-    text-transform: uppercase;
     color: #a0a0b4;
     .location {
       text-align: right;
@@ -63,7 +55,6 @@ const { t } = useI18n()
       Default Sans Mono,
       monospace;
     font-size: 1.05rem;
-    color: #a0a0b4;
     text-align: center;
     font-weight: 400;
     line-height: 1.72;
