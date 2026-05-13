@@ -8,12 +8,18 @@ import JoinUs from './component/JoinUs.vue'
 </script>
 
 <template>
-  <menu-bar />
-  <title-block />
-  <the-challenge />
-  <participant-group />
-  <the-schedule />
-  <join-us />
+  <v-app class="application">
+    <menu-bar />
+    <title-block />
+    <the-challenge />
+    <participant-group />
+    <the-schedule />
+    <join-us />
+  </v-app>
 </template>
 
-<style scoped></style>
+<style lang="scss">
+.application {
+  background-color: #080809;
+}
+</style>
