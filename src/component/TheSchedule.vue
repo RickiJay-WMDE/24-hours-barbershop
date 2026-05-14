@@ -6,15 +6,18 @@ const { t, tm } = useI18n()
 </script>
 
 <template>
-  <v-container class="schedule-container">
-    <v-container class="schedule-title">{{ t('schedule.title') }}</v-container>
-    <table>
+  <v-container class="schedule-container wide ma-0 px-8">
+    <v-container class="schedule-title ma-0 pa-0 header-text x-large-text">
+      {{ t('schedule.title') }}
+    </v-container>
+    <table class="schedule-table">
       <tbody>
         <schedule-item
+          include-date
           :time="new Date(2026, 8, 11, 19)"
           affects="everyone"
           :title="t('schedule.events.gathering.title')"
-          :copy="t('schedule.events.gathering.copy')"
+          :copy="tm('schedule.events.gathering.copy')"
         />
         <schedule-item
           :time="new Date(2026, 8, 11, 19, 30)"
@@ -29,10 +32,11 @@ const { t, tm } = useI18n()
           :copy="tm('schedule.events.begin.copy')"
         />
         <schedule-item
+          include-date
           :time="new Date(2026, 8, 12)"
           affects="singers"
           :title="t('schedule.events.tag_stop.title')"
-          :copy="t('schedule.events.tag_stop.copy')"
+          :copy="tm('schedule.events.tag_stop.copy')"
         />
         <schedule-item
           :time="new Date(2026, 8, 12, 1)"
@@ -55,13 +59,13 @@ const { t, tm } = useI18n()
           :time="new Date(2026, 8, 12, 8)"
           affects="everyone"
           :title="t('schedule.events.prep.title')"
-          :copy="t('schedule.events.prep.copy')"
+          :copy="tm('schedule.events.prep.copy')"
         />
         <schedule-item
           :time="new Date(2026, 8, 12, 9)"
           affects="everyone"
           :title="t('schedule.events.sectionals.title')"
-          :copy="t('schedule.events.sectionals.copy')"
+          :copy="tm('schedule.events.sectionals.copy')"
         />
         <schedule-item
           :time="new Date(2026, 8, 12, 10, 30)"
@@ -72,7 +76,7 @@ const { t, tm } = useI18n()
           :time="new Date(2026, 8, 12, 11)"
           affects="singers"
           :title="t('schedule.events.ensemble.title')"
-          :copy="t('schedule.events.ensemble.copy')"
+          :copy="tm('schedule.events.ensemble.copy')"
         />
         <schedule-item
           :time="new Date(2026, 8, 12, 12, 30)"
@@ -88,13 +92,13 @@ const { t, tm } = useI18n()
           :time="new Date(2026, 8, 12, 13, 45)"
           affects="singers"
           :title="t('schedule.events.interpretation.title')"
-          :copy="t('schedule.events.interpretation.copy')"
+          :copy="tm('schedule.events.interpretation.copy')"
         />
         <schedule-item
           :time="new Date(2026, 8, 12, 15)"
           affects="everyone"
           :title="t('schedule.events.pippin.title')"
-          :copy="t('schedule.events.pippin.copy')"
+          :copy="tm('schedule.events.pippin.copy')"
         />
         <schedule-item
           :time="new Date(2026, 8, 12, 17, 30)"
@@ -110,11 +114,23 @@ const { t, tm } = useI18n()
           :time="new Date(2026, 8, 12, 20)"
           affects="everyone"
           :title="t('schedule.events.concert.title')"
-          :copy="t('schedule.events.concert.copy')"
+          :copy="tm('schedule.events.concert.copy')"
         />
       </tbody>
     </table>
   </v-container>
 </template>
 
-<style scoped></style>
+<style lang="scss">
+.schedule-container {
+  background-color: #111014;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  .schedule-title {
+    margin-bottom: 3.5rem;
+  }
+  table {
+    width: 100%;
+  }
+}
+</style>

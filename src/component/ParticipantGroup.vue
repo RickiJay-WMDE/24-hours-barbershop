@@ -6,7 +6,7 @@ const { t, tm } = useI18n()
 </script>
 
 <template>
-  <v-container class="participants-container pa-0 ma-0">
+  <v-container class="participants-container wide pa-0 ma-0">
     <participant
       side="left"
       color="blue"
@@ -26,7 +26,6 @@ const { t, tm } = useI18n()
 
 <style lang="scss">
 .participants-container {
-  max-width: 100%;
   border-bottom: 4px solid rgba(255, 255, 255, 0.07);
   display: flex;
   flex-flow: row wrap;

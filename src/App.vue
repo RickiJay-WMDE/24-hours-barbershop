@@ -26,6 +26,9 @@ import JoinUs from './component/JoinUs.vue'
 .center {
   text-align: center;
 }
+.wide {
+  max-width: 100%;
+}
 .header-text {
   text-transform: uppercase;
   font-family:

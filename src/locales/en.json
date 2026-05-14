@@ -47,7 +47,7 @@
     "events": {
       "gathering": {
         "title": "Gathering",
-        "copy": "Meet, mingle, form quartets for individual singers "
+        "copy": ["Meet, mingle, form quartets for individual singers"]
       },
       "drawing": {
         "title": "The Drawing",
@@ -60,7 +60,10 @@
           "Singers: dinner and tag scavenger hunt — details TBA"
         ]
       },
-      "tag_stop": { "title": "Tagging Stop", "copy": "Rehearsal starts in 8 hours, please sleep" },
+      "tag_stop": {
+        "title": "Tagging Stop",
+        "copy": ["Rehearsal starts in 8 hours, please sleep"]
+      },
       "pancake_break": {
         "title": "Pancake Break",
         "copy": [
@@ -79,28 +82,30 @@
       "rehearsal_start": { "title": "Full Day of Rehearsal" },
       "prep": {
         "title": "Individual Prep",
-        "copy": "Listen, mark difficult spots, warm up voices"
+        "copy": ["Listen, mark difficult spots, warm up voices"]
       },
-      "sectionals": { "title": "Section Rehearsals", "copy": "Learn notes by voice parts" },
+      "sectionals": { "title": "Section Rehearsals", "copy": ["Learn notes by voice parts"] },
       "break": { "title": "Break" },
       "ensemble": {
         "title": "Ensemble Rehearsal",
-        "copy": "Crash-through arrangements, find points of coordination between parts, tune chords"
+        "copy": [
+          "Crash-through arrangements, find points of coordination between parts, tune chords"
+        ]
       },
       "record": { "title": "Record & Review Run-Through" },
       "lunch": { "title": "Lunch Break" },
       "interpretation": {
         "title": "Musical Interpretation",
-        "copy": "Dynamics, phrasing, story, performance"
+        "copy": ["Dynamics, phrasing, story, performance"]
       },
       "pippin": {
         "title": "Arranger Joins Rehearsal",
-        "copy": " Coach the arrangement, fix issues, run it "
+        "copy": ["Coach the arrangement, fix issues, run it"]
       },
       "polish": { "title": "Performance polish & full run-throughs" },
       "concert": {
         "title": "concert",
-        "copy": "The curtain goes up. Everything written, learned, and performed inside 24 hours."
+        "copy": ["The curtain goes up. Everything written, learned, and performed inside 24 hours."]
       }
     }
   },
