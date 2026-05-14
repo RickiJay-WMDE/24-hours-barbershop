@@ -50,9 +50,5 @@ const { t } = useI18n()
       text-align: left;
     }
   }
-  .tagline {
-    font-size: 1.05rem;
-    line-height: 1.72;
-  }
 }
 </style>

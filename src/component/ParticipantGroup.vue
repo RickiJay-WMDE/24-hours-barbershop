@@ -6,15 +6,17 @@ const { t, tm } = useI18n()
 </script>
 
 <template>
-  <v-container class="participants-container">
+  <v-container class="participants-container pa-0 ma-0">
     <participant
-      color="red"
+      side="left"
+      color="blue"
       :spots="t('participants.arrangers.spots')"
       :title="t('participants.arrangers.title')"
       :copy="tm('participants.arrangers.copy')"
     />
     <participant
-      color="blue"
+      side="right"
+      color="red"
       :spots="t('participants.singers.spots')"
       :title="t('participants.singers.title')"
       :copy="tm('participants.singers.copy')"
@@ -22,4 +24,11 @@ const { t, tm } = useI18n()
   </v-container>
 </template>
 
-<style scoped></style>
+<style lang="scss">
+.participants-container {
+  max-width: 100%;
+  border-bottom: 4px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  flex-flow: row wrap;
+}
+</style>

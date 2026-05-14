@@ -9,7 +9,7 @@ const { t } = useI18n()
     <v-container class="challenge-title center header-text red-text">
       {{ t('challenge.title') }}
     </v-container>
-    <v-container class="subtitle center header-text large-text white-text">
+    <v-container class="subtitle center header-text x-large-text white-text">
       {{ t('challenge.subtitle.one') }}
       <br />
       {{ t('challenge.subtitle.two') }}

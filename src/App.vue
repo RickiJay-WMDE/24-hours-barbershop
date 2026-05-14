@@ -21,7 +21,7 @@ import JoinUs from './component/JoinUs.vue'
 <style lang="scss">
 .application {
   background-color: #080809;
-  padding: 7rem 2rem 6rem;
+  padding: 7rem 0 6rem;
 }
 .center {
   text-align: center;
@@ -37,9 +37,14 @@ import JoinUs from './component/JoinUs.vue'
     Default Sans Mono,
     monospace;
   font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.72;
 }
 .dim-text {
   color: #a0a0b4;
+}
+.blue-text {
+  color: #0088ff;
 }
 .red-text {
   color: #ff2a1a;
@@ -47,10 +52,16 @@ import JoinUs from './component/JoinUs.vue'
 .white-text {
   color: #fff;
 }
-.large-text {
+.x-large-text {
   font-size: clamp(2.4rem, 5.5vw, 4.5rem);
   font-weight: 700;
   letter-spacing: 0.02em;
+  line-height: 1.05;
+}
+.large-text {
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
   line-height: 1.05;
 }
 </style>
