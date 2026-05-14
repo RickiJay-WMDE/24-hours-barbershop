@@ -1,1 +1,150 @@
-{}
+{
+  "locale": {
+    "lang_de": "Deutsch",
+    "lang_en": "English"
+  },
+  "menu": {
+    "about": "Über",
+    "participate": "Teilnehmen",
+    "schedule": "Programm",
+    "register": "Registrieren"
+  },
+  "title": {
+    "title": "24 Stunden Barbershop",
+    "location": "Berlin",
+    "date": "11. – 12. September 2026",
+    "tagline": "Die Nacht zum Arrangieren, den Tag zum Proben - und dann auf die Bühne."
+  },
+  "challenge": {
+    "title": "Die Challenge",
+    "subtitle": {
+      "one": "Keine Vorbereitung",
+      "two": "Nur 24 Stunden."
+    },
+    "copy": "Freitagabend in Berlin: Arrangeur:innen ziehen einen Song und ein Quartett. Ab dann zählt jede Minute. Bis 20 Uhr am nächsten Abend muss das Stück bühnenreif sein - geschrieben, geprobt und live aufgeführt in unter 24 Stunden."
+  },
+  "participants": {
+    "arrangers": {
+      "spots": "5 Plätze verfügbar",
+      "title": "Arrangeur:innen",
+      "copy": [
+        "Am Freitagabend ziehst du per Los einen Song und ein Quartett. Verbringe zuerst eine Stunde damit, ihre Stimmen kennenzulernen, dann geht’s ans Schreiben. Ein eigener Arrangeur:innen-Bereich — mit Tischen, Nebenräumen und gutem Kaffee — steht dir die ganze Nacht zur Verfügung.",
+        "Für jeden Song werden Leadsheets in MuseScore und als MusicXML vorbereitet. Du kannst jede Software zum Schreiben verwenden, die du möchtest. Wir drucken alles aus und stellen die Noten bis 8 Uhr morgens zur Verfügung.",
+        "Klare Empfehlung: Schreibe zuerst ein vollständiges, gut singbares Arrangement und füge erst danach Verzierungen und Feinheiten hinzu. Denke daran: Die Sänger:innen haben nur 12 Stunden Zeit, das Ganze einzustudieren."
+      ]
+    },
+    "singers": {
+      "spots": "20 Plätze — Quartett oder alleine",
+      "title": "Sänger:innen",
+      "copy": [
+        "Ihr könnt euch als fertiges Quartett anmelden oder alleine kommen — die Ensembles werden am Freitagabend vor Ort zusammengestellt. Es gibt Stimmen für hohe, gemischte und tiefe Lagen. Ihr lernt eure:n Arrangeur:in kennen, klärt eure Stimme und euren musikalischen Stil, und dann beginnt die Nacht.",
+        "Am Samstag um 8 Uhr liegt euer Arrangement bereit. Danach beginnt ein intensiver Probentag mit klarer Struktur: erst individuelle Vorbereitung, dann Stimm- und Ensembleproben, später Coaching mit Arrangeur:in.",
+        "Im Mittelpunkt steht das Zusammenspiel und der Klang, nicht das Auswendiglernen. Noten dürfen mit auf die Bühne."
+      ]
+    }
+  },
+  "schedule": {
+    "title": "Ablauf im Überblick",
+    "everyone": "Alle",
+    "arrangers": "Arrangeur:innen",
+    "singers": "Sänger:innen",
+    "events": {
+      "gathering": {
+        "title": "Ankommen",
+        "copy": ["Ankommen, kennenlernen und Quartette für die einzelnen Sänger:innen bilden"]
+      },
+      "drawing": {
+        "title": "Die Auslosung",
+        "copy": [
+          "Die Arrangeur:innen ziehen jeweils einen Song und ein Quartett",
+          "Die ersten Tagging-Sessions starten"
+        ]
+      },
+      "begin": {
+        "title": "Die Nacht beginnt",
+        "copy": [
+          "Arrangeur:innen: Pizza, Kaffee und eine leere Notenseite",
+          "Sänger:innen: Abendessen und ein kleiner 'Tagging-Scavenger-Hunt' — Details folgen"
+        ]
+      },
+      "tag_stop": {
+        "title": "Tagging-Ende",
+        "copy": ["In 8 Stunden beginnt die Probe — Zeit, schlafen zu gehen"]
+      },
+      "pancake_break": {
+        "title": "Pancake-Pause",
+        "copy": [
+          "Verpflichtende Pause, danach geht’s weiter",
+          "Optionaler Austausch unter den Arrangeur:innen"
+        ]
+      },
+      "done": {
+        "title": "Abgabe",
+        "copy": [
+          "PDFs, Noten und Teachtracks werden bereitgestellt",
+          "Sänger:innen: Proberäume werden geöffnet. Viel Erfolg beim schnellen Lernen!",
+          "Arrangeur:innen: Endlich schlafen"
+        ]
+      },
+      "rehearsal_start": { "title": "Probentag" },
+      "prep": {
+        "title": "Individuelle Vorbereitung",
+        "copy": ["Anhören, schwierige Stellen markieren, Stimmen aufwärmen"]
+      },
+      "sectionals": { "title": "Stimmproben", "copy": ["Proben nach Stimmlagen"] },
+      "break": { "title": "Pause" },
+      "ensemble": {
+        "title": "Ensembleprobe",
+        "copy": ["Stimmen zusammenführen, Einsätze abstimmen, Akkorde intonieren"]
+      },
+      "record": { "title": "Aufnahme & Durchlauf" },
+      "lunch": { "title": "Mittagspause" },
+      "interpretation": {
+        "title": "Musikalische Gestaltung",
+        "copy": ["Dynamik, Phrasierung, Story, Performance"]
+      },
+      "pippin": {
+        "title": "Coaching mit Arrangeur:in",
+        "copy": ["Feinschliff, Probleme lösen, gemeinsamer Durchlauf"]
+      },
+      "polish": { "title": "Finale Proben & Feinschliff" },
+      "concert": {
+        "title": "Konzert",
+        "copy": ["Vorhang auf. In 24 Stunden geschrieben, erarbeitet und auf die Bühne gebracht."]
+      }
+    }
+  },
+  "register": {
+    "title": {
+      "pippin": "Jetzt anmelden",
+      "berlin": "in Berlin"
+    },
+    "open": "Offen für Barbershop-Arrangeur:innen und Sänger:innen aller Erfahrungsstufen. Kommt als fertiges Quartett, alleine oder als Arrangeur:in für die intensivste Nacht eures musikalischen Lebens.",
+    "capacity": {
+      "limit": "Plätze sind streng limitiert:",
+      "arrangers": "5 Arrangeur:innen",
+      "and": "und",
+      "singers": "20 Sänger:innen (5 Quartette)",
+      "confirmation": "Bestätigungen werden verschickt bis"
+    },
+    "questions": "Fragen?",
+    "fee": {
+      "fee": "Teilnahmegebühr:",
+      "per": "pro Person — inklusive Freitagabendessen, Venue und Materialien."
+    },
+    "now": "Jetzt anmelden",
+    "countdown": {
+      "days": "Tage",
+      "hours": "Stunden",
+      "mins": "Minuten",
+      "secs": "Sekunden",
+      "close": "bis zur Schließung der Anmeldung"
+    },
+    "dates": {
+      "deadline": "Anmeldeschluss",
+      "confirm": "Bestätigung",
+      "by": "bis",
+      "event": "Event"
+    }
+  }
+}

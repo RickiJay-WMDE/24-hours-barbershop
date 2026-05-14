@@ -1,4 +1,8 @@
 {
+  "locale": {
+    "lang_de": "Deutsch",
+    "lang_en": "English"
+  },
   "menu": {
     "about": "About",
     "participate": "Participate",

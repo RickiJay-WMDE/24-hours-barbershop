@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import logo from '@/media/24HRS_LOGO.svg'
 import { useI18n } from 'vue-i18n'
+import LangMenu from './LangMenu.vue'
 
 const { t } = useI18n()
 </script>
@@ -35,6 +36,7 @@ const { t } = useI18n()
       >
         {{ t('menu.schedule') }}
       </v-btn>
+      <lang-menu />
       <v-btn
         variant="outlined"
         density="compact"
