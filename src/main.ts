@@ -6,20 +6,14 @@ import { createVuetify } from 'vuetify'
 import { md2 } from 'vuetify/blueprints'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-import { aliases, mdi } from 'vuetify/iconsets/mdi'
+import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 import 'vuetify/styles'
 
 const vuetify = createVuetify({
   components,
   directives,
-  defaults: {
-    global: { FontFace: 'Sofia Sans' },
-  },
-  icons: {
-    defaultSet: 'mdi',
-    aliases,
-    sets: { mdi },
-  },
+  defaults: { global: { FontFace: 'Sofia Sans' } },
+  icons: { defaultSet: 'mdi', aliases, sets: { mdi } },
   blueprint: md2,
 })
 

@@ -135,8 +135,8 @@
       "secs": "Secs",
       "close": "until registration closes"
     },
-    "deadline": "Deadline",
     "dates": {
+      "deadline": "Deadline",
       "confirm": "Confirm",
       "by": "by",
       "event": "Event"
