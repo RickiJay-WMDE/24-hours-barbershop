@@ -127,6 +127,8 @@ const { t, locale } = useI18n()
 
 <style lang="scss">
 .register-container {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
   transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
 

@@ -22,6 +22,7 @@ const { t } = useI18n()
 
 <style lang="scss">
 .challenge-container {
+  padding: 7rem 0;
   .challenge-title {
     font-size: 0.7rem;
     font-weight: 600;

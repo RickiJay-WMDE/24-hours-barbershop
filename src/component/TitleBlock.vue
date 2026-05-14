@@ -24,6 +24,7 @@ const { t, tm } = useI18n()
 
 <style lang="scss">
 .title-container {
+  min-height: 100vh;
   h1 {
     font-size: clamp(4.5rem, 13vw, 10rem);
     line-height: 1.05;
