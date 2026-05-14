@@ -6,6 +6,7 @@ const { t, tm } = useI18n()
 </script>
 
 <template>
+  <a name="schedule"></a>
   <v-container class="schedule-container wide ma-0 px-8">
     <v-container class="schedule-title ma-0 pa-0 header-text x-large-text">
       {{ t('schedule.title') }}

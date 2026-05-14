@@ -5,7 +5,8 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <v-container class="challenge-container" name="concept">
+  <a name="concept"></a>
+  <v-container class="challenge-container">
     <v-container class="challenge-title center header-text red-text">
       {{ t('challenge.title') }}
     </v-container>
@@ -22,7 +23,7 @@ const { t } = useI18n()
 
 <style lang="scss">
 .challenge-container {
-  padding: 7rem 0;
+  padding: 7rem 0 0;
   .challenge-title {
     font-size: 0.7rem;
     font-weight: 600;
