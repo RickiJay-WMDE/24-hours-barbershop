@@ -39,49 +39,68 @@ const secondsUntil = computed(
 </script>
 
 <template>
-  <v-container class="countdown-container wide header-text ma-0 pa-0">
-    <v-container class="countdown-box">
-      <v-container class="number large-text red-text ma-0 pa-0">
-        {{ daysUntil }}
-      </v-container>
-      <v-contaienr class="label dim-text ma-0 pa-0">{{ t('register.countdown.days') }}</v-contaienr>
-    </v-container>
-    <v-container class="countdown-box">
-      <v-container class="number large-text red-text ma-0 pa-0">
-        {{ hoursUntil }}
-      </v-container>
-      <v-contaienr class="label dim-text ma-0 pa-0">
-        {{ t('register.countdown.hours') }}</v-contaienr
-      >
-    </v-container>
-    <v-container class="countdown-box">
-      <v-container class="number large-text red-text ma-0 pa-0">
-        {{ minutesUntil }}
-      </v-container>
-      <v-contaienr class="label dim-text ma-0 pa-0">{{ t('register.countdown.mins') }}</v-contaienr>
-    </v-container>
-    <v-container class="countdown-box">
-      <v-container class="number large-text red-text ma-0 pa-0">
-        {{ secondsUntil }}
-      </v-container>
-      <v-contaienr class="label dim-text ma-0 pa-0">{{ t('register.countdown.secs') }}</v-contaienr>
-    </v-container>
-  </v-container>
+  <table class="wide countdown-container">
+    <tbody>
+      <tr>
+        <td>
+          <v-container class="countdown-box">
+            <v-container class="number large-text red-text ma-0 pa-0">
+              {{ daysUntil }}
+            </v-container>
+            <v-container class="label dim-text ma-0 pa-0">
+              {{ t('register.countdown.days') }}
+            </v-container>
+          </v-container>
+        </td>
+        <td>
+          <v-container class="countdown-box">
+            <v-container class="number large-text red-text ma-0 pa-0">
+              {{ hoursUntil }}
+            </v-container>
+            <v-container class="label dim-text ma-0 pa-0">
+              {{ t('register.countdown.hours') }}
+            </v-container>
+          </v-container>
+        </td>
+        <td>
+          <v-container class="countdown-box">
+            <v-container class="number large-text red-text ma-0 pa-0">
+              {{ minutesUntil }}
+            </v-container>
+            <v-container class="label dim-text ma-0 pa-0">
+              {{ t('register.countdown.mins') }}
+            </v-container></v-container
+          >
+        </td>
+        <td>
+          <v-container class="countdown-box">
+            <v-container class="number large-text red-text ma-0 pa-0">
+              {{ secondsUntil }}
+            </v-container>
+            <v-container class="label dim-text ma-0 pa-0">
+              {{ t('register.countdown.secs') }}
+            </v-container>
+          </v-container>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </template>
 
 <style lang="scss">
 .countdown-container {
   margin-top: 3rem;
-  display: flex;
-  flex-flow: row wrap;
+  width: 100%;
+  border-collapse: collapse;
+  td {
+    background-color: #111014;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
   .countdown-box {
-    flex-grow: 1;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     width: auto;
-    background-color: #111014;
-    border: 1px solid rgba(255, 255, 255, 0.07);
     .number,
     .label {
       width: auto;
