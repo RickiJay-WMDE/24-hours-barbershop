@@ -11,6 +11,12 @@ const languages = computed(() =>
 
 <template>
   <div class="text-center lang-switcher">
-    <v-select v-model="locale" :items="languages" density="compact" hide-details class="mr-3" />
+    <v-select
+      v-model="locale"
+      :items="languages"
+      density="compact"
+      hide-details
+      class="text-center lang-switcher header-text dim-text"
+    />
   </div>
 </template>
