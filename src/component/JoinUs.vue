@@ -59,6 +59,19 @@ const { t, locale } = useI18n()
       {{ t('register.now') }}
     </v-btn>
     <registry-countdown />
+    <v-container class="close-container header-text dim-text ma-0 pa-0">
+      <div class="until ma-0 pa-0">{{ t('register.countdown.close') }}</div>
+      <div class="ma-0 pa-0">&middot;</div>
+      <div class="date shrink ma-0 pa-0">
+        {{
+          registrationDeadline.toLocaleDateString(locale, {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })
+        }}
+      </div>
+    </v-container>
     <table class="date-container">
       <tbody>
         <tr>
@@ -145,6 +158,23 @@ const { t, locale } = useI18n()
     margin-top: 0px;
     margin-bottom: 2px;
   }
+  .close-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 2rem;
+    margin-top: 0.75rem;
+    .until {
+      text-align: right;
+    }
+    .setting {
+      text-align: left;
+    }
+  }
+
   td.label {
     font-size: 0.7rem;
     font-weight: 600;
