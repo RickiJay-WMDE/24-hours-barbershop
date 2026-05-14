@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
+const { t, tm } = useI18n()
 </script>
 
 <template>
   <v-container class="title-container">
-    <h1 class="center header-text white-text">{{ t('title.title') }}</h1>
+    <h1 class="center header-text white-text">
+      <span class="red-tint">{{ tm('title.title')[0] }}</span>
+      <br />
+      <span class="blue-tint">{{ tm('title.title')[1] }}</span>
+    </h1>
     <v-container class="setting header-text dim-text mx-0 mb-4 pa-0">
       <div class="location ma-0 pa-0">{{ t('title.location') }}</div>
       <div class="ma-0 pa-0">&middot;</div>
@@ -23,14 +27,26 @@ const { t } = useI18n()
   h1 {
     font-size: clamp(4.5rem, 13vw, 10rem);
     line-height: 1.05;
-    text-shadow:
-      0 0 4px #fff,
-      0 0 10px #fff,
-      0 0 22px #fff,
-      0 0 50px rgba(255, 255, 255, 0.3),
-      0 0 70px rgba(0, 136, 255, 0.5),
-      0 0 120px rgba(0, 136, 255, 0.5),
-      0 0 200px rgba(0, 136, 255, 0.5);
+    .blue-tint {
+      text-shadow:
+        0 0 4px #fff,
+        0 0 10px #fff,
+        0 0 22px #fff,
+        0 0 50px rgba(255, 255, 255, 0.3),
+        0 0 70px rgba(0, 136, 255, 0.5),
+        0 0 120px rgba(0, 136, 255, 0.5),
+        0 0 200px rgba(0, 136, 255, 0.5);
+    }
+    .red-tint {
+      text-shadow:
+        0 0 4px #fff,
+        0 0 10px #fff,
+        0 0 22px #fff,
+        0 0 50px rgba(255, 255, 255, 0.3),
+        0 0 70px #ff2a1a,
+        0 0 120px #ff2a1a,
+        0 0 200px rgba(255, 42, 26, 0.6);
+    }
     animation: neon-flicker 12s ease-in-out infinite;
     margin-bottom: 24px;
   }

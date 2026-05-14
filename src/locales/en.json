@@ -10,7 +10,7 @@
     "register": "Register"
   },
   "title": {
-    "title": "24 Hours of Barbershop",
+    "title": ["24 Hours of", "Barbershop"],
     "location": "Berlin",
     "date": "11–12 September 2026",
     "tagline": "Arrange all night. Rehearse all day. Go on stage."

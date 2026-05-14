@@ -10,7 +10,7 @@
     "register": "Registrieren"
   },
   "title": {
-    "title": "24 Stunden Barbershop",
+    "title": ["24 Stunden", "Barbershop"],
     "location": "Berlin",
     "date": "11. – 12. September 2026",
     "tagline": "Die Nacht zum Arrangieren, den Tag zum Proben - und dann auf die Bühne."
