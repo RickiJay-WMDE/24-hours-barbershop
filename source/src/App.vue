@@ -1,10 +1,10 @@
 <script setup lang="ts">
+import JoinUs from '@/component/JoinUs.vue'
 import MenuBar from '@/component/MenuBar.vue'
 import ParticipantGroup from '@/component/ParticipantGroup.vue'
 import TheChallenge from '@/component/TheChallenge.vue'
 import TheSchedule from '@/component/TheSchedule.vue'
 import TitleBlock from '@/component/TitleBlock.vue'
-import JoinUs from './component/JoinUs.vue'
 </script>
 
 <template>
@@ -66,5 +66,8 @@ import JoinUs from './component/JoinUs.vue'
   font-weight: 700;
   letter-spacing: 0.03em;
   line-height: 1.05;
+}
+.rounded {
+  border-radius: 9999px;
 }
 </style>

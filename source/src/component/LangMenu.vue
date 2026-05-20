@@ -9,7 +9,7 @@ const setLocale = (l: string) => (locale.value = l)
 <template>
   <div class="text-center lang-switcher header-text dim-text">
     <template v-for="(l, idx) in availableLocales" :key="idx">
-      <template v-if="idx > 0">&vert;</template>
+      <template v-if="idx > 0"><div class="vert" /></template>
       <v-btn density="compact" class="ma-0 pa-0 shrink" :onclick="() => setLocale(l)">
         {{ l }}
       </v-btn>
@@ -29,6 +29,11 @@ const setLocale = (l: string) => (locale.value = l)
   .v-btn {
     padding: 0;
     width: 14px;
+    background: transparent;
+  }
+  .vert {
+    height: inherit;
+    border: 1px solid #a0a0b4;
   }
 }
 </style>

@@ -50,7 +50,7 @@ const { t, locale } = useI18n()
       </v-container>
     </v-container>
     <v-btn
-      class="register-now-button"
+      class="register-now-button rounded"
       :append-icon="mdiArrowRight"
       variant="tonal"
       href="https://pretix.eu/24hrsbarbershop/2026/"
@@ -149,7 +149,6 @@ const { t, locale } = useI18n()
   .register-now-button {
     background-color: #ff2a1a;
     color: #fff;
-    border-radius: 9999px;
     margin-top: 2px;
     margin-bottom: 0px;
     padding: 24px;
