@@ -55,6 +55,7 @@ const { t, locale } = useI18n()
       variant="tonal"
       href="https://pretix.eu/24hrsbarbershop/2026/"
       target="_blank"
+      disabled
     >
       {{ t('register.now') }}
     </v-btn>

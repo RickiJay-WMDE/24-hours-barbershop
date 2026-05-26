@@ -42,6 +42,7 @@ const { width } = useWindowSize()
         </v-btn>
         <lang-menu />
         <v-btn
+          disabled
           variant="outlined"
           density="compact"
           class="menu-item rounded header-text red-text"
@@ -70,7 +71,7 @@ const { width } = useWindowSize()
         />
         <v-list-item :title="t('menu.schedule')" href="#schedule" class="header-text menu-item" />
         <v-list-item><lang-menu /></v-list-item>
-        <v-list-item href="https://pretix.eu/24hrsbarbershop/2026/" target="_blank">
+        <v-list-item v-if="false" href="https://pretix.eu/24hrsbarbershop/2026/" target="_blank">
           <v-btn
             variant="outlined"
             density="compact"
