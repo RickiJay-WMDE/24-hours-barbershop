@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import ScheduleItem from '@/component/ScheduleItem.vue'
+import { eventStartDate } from '@/dates.ts'
 import { useI18n } from 'vue-i18n'
-import ScheduleItem from './ScheduleItem.vue'
 
 const { t, tm } = useI18n()
 </script>
@@ -15,7 +16,7 @@ const { t, tm } = useI18n()
       <tbody>
         <schedule-item
           include-date
-          :time="new Date(2026, 8, 11, 19)"
+          :time="eventStartDate"
           affects="everyone"
           :title="t('schedule.events.gathering.title')"
           :copy="tm('schedule.events.gathering.copy')"
