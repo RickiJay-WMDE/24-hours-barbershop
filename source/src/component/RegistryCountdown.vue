@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { registrationDeadline } from '@/dates'
+import { eventStartDate } from '@/dates'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -8,33 +8,32 @@ const { t } = useI18n()
 const now = ref(Date.now())
 setInterval(() => (now.value = Date.now()), 1000)
 
+const deadline = eventStartDate
+
 const MILLISECONDS_PER_SECOND = 1000
 const SECONDS_PER_MINUTE = 60
 const MINUTES_PER_HOUR = 60
 const HOURS_PER_DAY = 24
 const daysUntil = computed(() =>
   Math.floor(
-    (registrationDeadline.getTime() - now.value) /
+    (deadline.getTime() - now.value) /
       (MILLISECONDS_PER_SECOND * SECONDS_PER_MINUTE * MINUTES_PER_HOUR * HOURS_PER_DAY),
   ),
 )
 const hoursUntil = computed(
   () =>
     Math.floor(
-      (registrationDeadline.getTime() - now.value) /
+      (deadline.getTime() - now.value) /
         (MILLISECONDS_PER_SECOND * SECONDS_PER_MINUTE * MINUTES_PER_HOUR),
     ) % HOURS_PER_DAY,
 )
 const minutesUntil = computed(
   () =>
-    Math.floor(
-      (registrationDeadline.getTime() - now.value) / (MILLISECONDS_PER_SECOND * SECONDS_PER_MINUTE),
-    ) % MINUTES_PER_HOUR,
+    Math.floor((deadline.getTime() - now.value) / (MILLISECONDS_PER_SECOND * SECONDS_PER_MINUTE)) %
+    MINUTES_PER_HOUR,
 )
 const secondsUntil = computed(
-  () =>
-    Math.floor((registrationDeadline.getTime() - now.value) / MILLISECONDS_PER_SECOND) %
-    SECONDS_PER_MINUTE,
+  () => Math.floor((deadline.getTime() - now.value) / MILLISECONDS_PER_SECOND) % SECONDS_PER_MINUTE,
 )
 </script>
 

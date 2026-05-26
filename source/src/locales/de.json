@@ -138,7 +138,7 @@
       "hours": "Stunden",
       "mins": "Minuten",
       "secs": "Sekunden",
-      "close": "bis zur Schließung der Anmeldung"
+      "until": "bis ankommen"
     },
     "dates": {
       "deadline": "Anmeldeschluss",

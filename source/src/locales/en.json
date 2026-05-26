@@ -137,7 +137,7 @@
       "hours": "Hours",
       "mins": "Mins",
       "secs": "Secs",
-      "close": "until registration closes"
+      "until": "until the gathering"
     },
     "dates": {
       "deadline": "Deadline",

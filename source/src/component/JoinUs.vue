@@ -61,11 +61,11 @@ const { t, locale } = useI18n()
     </v-btn>
     <registry-countdown />
     <v-container class="close-container header-text dim-text ma-0 pa-0">
-      <div class="until ma-0 pa-0">{{ t('register.countdown.close') }}</div>
+      <div class="until ma-0 pa-0">{{ t('register.countdown.until') }}</div>
       <div class="ma-0 pa-0">&middot;</div>
       <div class="date shrink ma-0 pa-0">
         {{
-          registrationDeadline.toLocaleDateString(locale, {
+          eventStartDate.toLocaleDateString(locale, {
             day: 'numeric',
             month: 'long',
             year: 'numeric',
