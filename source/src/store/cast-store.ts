@@ -1,8 +1,9 @@
 import { defineStore } from 'pinia'
 import { computed, ref, watch } from 'vue'
 
+export type RangeType = 'tenor' | 'lead' | 'bari' | 'bass'
 type SubRange = { tenor: boolean; lead: boolean; bari: boolean; bass: boolean }
-export type VoiceRange = { upper: SubRange; mixed: SubRange; lower: SubRange }
+type VoiceRange = { upper: SubRange; mixed: SubRange; lower: SubRange }
 
 export type Person = {
   code: string
@@ -89,15 +90,11 @@ const isValidQuartet = (candidates: Person[]): false | Quartet => {
 const useCastStore = defineStore('cast-store', () => {
   const people = ref<Record<string, Person>>(getStoredPeople() ?? {})
   watch(people, () => {
-    console.log('Storing')
     localStorage.setItem(SINGERS_LOCAL_STORAGE_KEY, JSON.stringify(people.value))
-    console.log('Stored', people.value)
   })
 
   const setPerson = (person: Person) => {
-    console.log('Setting', person)
     people.value = { ...people.value, [person.code]: person }
-    console.log('People', people.value)
   }
 
   const quartets = ref<Record<string, Quartet>>(getStoredQuartets() ?? {})
@@ -127,7 +124,9 @@ const useCastStore = defineStore('cast-store', () => {
 
   const randomizeQuartets = () => {
     let available = unassigned.value
-    const idxs = available.map((_, idx) => idx).filter((idx) => idx % 4 == 0)
+    const idxs = available
+      .map((_, idx) => idx)
+      .filter((idx) => idx % 4 == 0 && idx < available.length - 4)
 
     let potentialQuartets: Quartet[] = []
 
@@ -135,15 +134,10 @@ const useCastStore = defineStore('cast-store', () => {
 
     let allWorks = available.length < 4
     while (attempt < 100 && !allWorks) {
-      console.log('Attempt', attempt)
       available = available
         .map((v) => ({ sort: Math.random(), value: v }))
         .sort((a, b) => a.sort - b.sort)
         .map((a) => a.value)
-      console.log(
-        'Order',
-        available.map((p) => p.code),
-      )
 
       allWorks = true
 

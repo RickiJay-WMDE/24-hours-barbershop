@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import PersonChip from '@/component/PersonChip.vue'
+import QuartetCard from '@/component/QuartetCard.vue'
 import useCastStore, { type Quartet } from '@/store/cast-store'
 import { computed, ref } from 'vue'
 
@@ -16,14 +18,12 @@ const randomize = () => (randomResults.value = store.randomizeQuartets())
     <v-container>Cast List</v-container>
     <v-container>
       <v-container>Quartets</v-container>
-      <v-container v-for="(quartet, code) in quartets" :key="code">
-        {{ quartet }}
-      </v-container>
+      <quartet-card v-for="(quartet, code) in quartets" :key="code" :quartet="quartet" />
     </v-container>
     <v-container>
       <v-container>Unassigned</v-container>
-      <v-container v-for="(person, code) in unassigned" :key="code">
-        {{ person }}
+      <v-container class="unassigned-container">
+        <person-chip v-for="(person, code) in unassigned" :key="code" :person="person" />
       </v-container>
     </v-container>
   </v-container>
@@ -31,9 +31,15 @@ const randomize = () => (randomResults.value = store.randomizeQuartets())
     <v-container>Random</v-container>
     <v-btn @click="randomize">Randomize</v-btn>
     <v-container>
-      {{ randomResults }}
+      <quartet-card v-for="(quartet, idx) in randomResults" :key="idx" :quartet="quartet" />
     </v-container>
   </v-container>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.unassigned-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 8px;
+}
+</style>
