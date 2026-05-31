@@ -1,20 +1,11 @@
 <script setup lang="ts">
-import JoinUs from '@/component/JoinUs.vue'
 import MenuBar from '@/component/MenuBar.vue'
-import ParticipantGroup from '@/component/ParticipantGroup.vue'
-import TheChallenge from '@/component/TheChallenge.vue'
-import TheSchedule from '@/component/TheSchedule.vue'
-import TitleBlock from '@/component/TitleBlock.vue'
 </script>
 
 <template>
   <v-app class="application">
     <menu-bar />
-    <title-block />
-    <the-challenge />
-    <participant-group />
-    <the-schedule />
-    <join-us />
+    <RouterView />
   </v-app>
 </template>
 
