@@ -1,22 +1,31 @@
 <script setup lang="ts">
-import type { Person, RangeType } from '@/store/cast-store'
+import type { Person, QuartetType, RangeType, VoiceRange } from '@/store/cast-store'
 
 defineProps<{ person: Person; range?: RangeType }>()
+
+const qTypeList: QuartetType[] = ['lower', 'mixed', 'upper']
+const vTypeList: RangeType[] = ['tenor', 'lead', 'bari', 'bass']
+
+const rangeString = (rangeOptions: VoiceRange): string =>
+  qTypeList
+    .flatMap((qType) =>
+      vTypeList.flatMap((vType) =>
+        rangeOptions?.[qType]?.[vType] ? `${qType} ${vType}` : undefined,
+      ),
+    )
+    .filter((s) => s)
+    .join(', ')
 </script>
 
 <template>
-  <v-chip :class="`person-chip ${range ?? 'unassigned'}-chip`">
-    <span>
-      {{ person.name }}
-    </span>
-    <template v-if="person.pronouns">
-      <span>
-        <span>(</span>
-        <span>{{ person.pronouns }}</span>
-        <span>)</span>
-      </span>
+  <v-tooltip :disabled="range != undefined" :text="rangeString(person.rangeOptions)">
+    <template v-slot:activator="{ props }">
+      <v-chip :class="`person-chip ${range ?? 'unassigned'}-chip`" v-bind="props">
+        <span>{{ person.name }}</span>
+        <span v-if="person.pronouns">({{ person.pronouns }})</span>
+      </v-chip>
     </template>
-  </v-chip>
+  </v-tooltip>
 </template>
 
 <style lang="scss">

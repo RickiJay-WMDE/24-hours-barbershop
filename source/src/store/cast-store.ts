@@ -3,7 +3,8 @@ import { computed, ref, watch } from 'vue'
 
 export type RangeType = 'tenor' | 'lead' | 'bari' | 'bass'
 type SubRange = { tenor: boolean; lead: boolean; bari: boolean; bass: boolean }
-type VoiceRange = { upper: SubRange; mixed: SubRange; lower: SubRange }
+export type QuartetType = 'upper' | 'mixed' | 'lower'
+export type VoiceRange = { upper: SubRange; mixed: SubRange; lower: SubRange }
 
 export type Person = {
   code: string
