@@ -2,8 +2,10 @@ import { defineStore } from 'pinia'
 import { computed, ref, watch } from 'vue'
 
 export type RangeType = 'tenor' | 'lead' | 'bari' | 'bass'
+export const vTypeList: RangeType[] = ['tenor', 'lead', 'bari', 'bass']
 type SubRange = { tenor: boolean; lead: boolean; bari: boolean; bass: boolean }
 export type QuartetType = 'upper' | 'mixed' | 'lower'
+export const qTypeList: QuartetType[] = ['lower', 'mixed', 'upper']
 export type VoiceRange = { upper: SubRange; mixed: SubRange; lower: SubRange }
 
 export type Person = {
@@ -38,49 +40,44 @@ const getStoredQuartets = (): Record<string, Quartet> | undefined => {
   }
 }
 
+const allCombinations = (candidates: Person[]): Quartet[] => {
+  const indices = [...candidates.keys()]
+
+  return indices.flatMap((tIdx) =>
+    indices
+      .filter((i) => i != tIdx)
+      .flatMap((lIdx) =>
+        indices
+          .filter((i) => i != tIdx && i != lIdx)
+          .flatMap((brIdx) =>
+            indices
+              .filter((i) => i != tIdx && i != lIdx && i != brIdx)
+              .map((bsIdx) => ({
+                tenor: candidates[tIdx],
+                lead: candidates[lIdx],
+                bari: candidates[brIdx],
+                bass: candidates[bsIdx],
+              })),
+          ),
+      ),
+  )
+}
+
 const isValidQuartet = (candidates: Person[]): false | Quartet => {
   if (candidates.length != 4) {
     console.error('Wrong Number', candidates)
     return false
   }
 
-  const indices = [...candidates.keys()]
-
-  for (const tenor_idx of indices) {
-    for (const lead_idx of indices.filter((idx) => idx != tenor_idx)) {
-      for (const bari_idx of indices.filter((idx) => idx != tenor_idx && idx != lead_idx)) {
-        for (const bass_idx of indices.filter(
-          (idx) => idx != tenor_idx && idx != lead_idx && idx != bari_idx,
-        )) {
-          if (
-            candidates[tenor_idx] &&
-            candidates[lead_idx] &&
-            candidates[bari_idx] &&
-            candidates[bass_idx]
-          ) {
-            if (
-              (candidates[tenor_idx].rangeOptions.lower.tenor &&
-                candidates[lead_idx].rangeOptions.lower.lead &&
-                candidates[bari_idx].rangeOptions.lower.bari &&
-                candidates[bass_idx].rangeOptions.lower.bass) ||
-              (candidates[tenor_idx].rangeOptions.mixed.tenor &&
-                candidates[lead_idx].rangeOptions.mixed.lead &&
-                candidates[bari_idx].rangeOptions.mixed.bari &&
-                candidates[bass_idx].rangeOptions.mixed.bass) ||
-              (candidates[tenor_idx].rangeOptions.upper.tenor &&
-                candidates[lead_idx].rangeOptions.upper.lead &&
-                candidates[bari_idx].rangeOptions.upper.bari &&
-                candidates[bass_idx].rangeOptions.upper.bass)
-            ) {
-              return {
-                tenor: candidates[tenor_idx],
-                lead: candidates[lead_idx],
-                bari: candidates[bari_idx],
-                bass: candidates[bass_idx],
-              }
-            }
-          }
-        }
+  for (const pQuartet of allCombinations(candidates)) {
+    for (const qType of qTypeList) {
+      if (
+        pQuartet.tenor?.rangeOptions?.[qType].tenor &&
+        pQuartet.lead?.rangeOptions?.[qType].lead &&
+        pQuartet.bari?.rangeOptions?.[qType].bari &&
+        pQuartet.bass?.rangeOptions?.[qType].bass
+      ) {
+        return pQuartet
       }
     }
   }

@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import type { Person, QuartetType, RangeType, VoiceRange } from '@/store/cast-store'
+import {
+  qTypeList,
+  vTypeList,
+  type Person,
+  type RangeType,
+  type VoiceRange,
+} from '@/store/cast-store'
 
 defineProps<{ person: Person; range?: RangeType }>()
-
-const qTypeList: QuartetType[] = ['lower', 'mixed', 'upper']
-const vTypeList: RangeType[] = ['tenor', 'lead', 'bari', 'bass']
 
 const rangeString = (rangeOptions: VoiceRange): string =>
   qTypeList
