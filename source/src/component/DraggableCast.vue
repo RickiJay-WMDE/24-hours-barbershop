@@ -2,6 +2,7 @@
 import PersonChip from '@/component/PersonChip.vue'
 import useCastStore, { type Person } from '@/store/cast-store'
 import isValidPartialQuartet from '@/util/valid-partial-quartet'
+import { mdiThumbDownOutline, mdiThumbUpOutline } from '@mdi/js'
 import { computed, onMounted, ref, watch } from 'vue'
 import { VueDraggableNext as draggable } from 'vue-draggable-next'
 
@@ -94,7 +95,14 @@ onMounted(() => (unassignedList.value = store.unassigned.map((v) => v.code)))
             </draggable>
           </div>
           <div class="valid">
-            {{ isValidPartialQuartet(potentialTenor, undefined, undefined, undefined) }}
+            <v-icon
+              v-if="potentialTenor"
+              :icon="
+                isValidPartialQuartet(potentialTenor, undefined, undefined, undefined)
+                  ? mdiThumbUpOutline
+                  : mdiThumbDownOutline
+              "
+            />
           </div>
         </div>
         <div class="voice">
@@ -112,7 +120,14 @@ onMounted(() => (unassignedList.value = store.unassigned.map((v) => v.code)))
             </draggable>
           </div>
           <div class="valid">
-            {{ isValidPartialQuartet(undefined, potentialLead, undefined, undefined) }}
+            <v-icon
+              v-if="potentialLead"
+              :icon="
+                isValidPartialQuartet(undefined, potentialLead, undefined, undefined)
+                  ? mdiThumbUpOutline
+                  : mdiThumbDownOutline
+              "
+            />
           </div>
         </div>
         <div class="voice">
@@ -130,7 +145,14 @@ onMounted(() => (unassignedList.value = store.unassigned.map((v) => v.code)))
             </draggable>
           </div>
           <div class="valid">
-            {{ isValidPartialQuartet(undefined, undefined, potentialBari, undefined) }}
+            <v-icon
+              v-if="potentialBari"
+              :icon="
+                isValidPartialQuartet(undefined, undefined, potentialBari, undefined)
+                  ? mdiThumbUpOutline
+                  : mdiThumbDownOutline
+              "
+            />
           </div>
         </div>
         <div class="voice">
@@ -148,7 +170,14 @@ onMounted(() => (unassignedList.value = store.unassigned.map((v) => v.code)))
             </draggable>
           </div>
           <div class="valid">
-            {{ isValidPartialQuartet(undefined, undefined, undefined, potentialBass) }}
+            <v-icon
+              v-if="potentialBass"
+              :item="
+                isValidPartialQuartet(undefined, undefined, undefined, potentialBass)
+                  ? mdiThumbUpOutline
+                  : mdiThumbDownOutline
+              "
+            />
           </div>
         </div>
       </div>
