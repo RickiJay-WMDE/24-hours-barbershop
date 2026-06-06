@@ -5,16 +5,14 @@ import {
   type Person,
   type RangeType,
   type VoiceRange,
-} from '@/store/cast-store'
+} from '@/store/cast-store';
 
 defineProps<{ person: Person; range?: RangeType }>()
 
 const rangeString = (rangeOptions: VoiceRange): string =>
   qTypeList
     .flatMap((qType) =>
-      vTypeList.flatMap((vType) =>
-        rangeOptions?.[qType]?.[vType] ? `${qType} ${vType}` : undefined,
-      ),
+      vTypeList.map((vType) => (rangeOptions?.[qType]?.[vType] ? `${qType} ${vType}` : undefined)),
     )
     .filter((s) => s)
     .join(', ')
