@@ -15,6 +15,7 @@ const { pushUnassigned, setPotentialVoice, voice } = defineProps<{
 
 const store = useCastStore()
 const people = computed(() => store.people)
+const unassignedCodes = computed(() => store.unassigned.map((v) => v.code))
 
 const potentialVoiceList = ref<string[]>([])
 watch(potentialVoiceList, () => {
@@ -25,6 +26,13 @@ watch(potentialVoiceList, () => {
     }
   }
 })
+watch(
+  unassignedCodes,
+  () =>
+    (potentialVoiceList.value = potentialVoiceList.value.filter((code: string) =>
+      unassignedCodes.value.includes(code),
+    )),
+)
 const potentialVoice = computed((): Person | undefined =>
   potentialVoiceList.value[0] ? people.value[potentialVoiceList.value[0]] : undefined,
 )

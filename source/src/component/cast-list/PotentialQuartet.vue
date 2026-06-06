@@ -1,10 +1,25 @@
 <script setup lang="ts">
-import PotentialQuartetVoice from '@/component/cast-list/PotentialQuartetVoice.vue'
-import { type Person } from '@/store/cast-store'
-import isValidPartialQuartet from '@/util/valid-partial-quartet'
-import { ref } from 'vue'
+import PotentialQuartetVoice from '@/component/cast-list/PotentialQuartetVoice.vue';
+import useCastStore, { type Person } from '@/store/cast-store';
+import isValidPartialQuartet from '@/util/valid-partial-quartet';
+import { ref } from 'vue';
 
-const { pushUnassigned } = defineProps<{ pushUnassigned: (v: string) => void }>()
+const { pushUnassigned, resetUnassigned } = defineProps<{
+  pushUnassigned: (v: string) => void
+  resetUnassigned: () => void
+}>()
+
+const store = useCastStore()
+
+const assignQuartet = () => {
+  store.setQuartet({
+    tenor: potentialTenor.value,
+    lead: potentialLead.value,
+    bari: potentialBari.value,
+    bass: potentialBass.value,
+  })
+  resetUnassigned()
+}
 
 const potentialTenor = ref<Person | undefined>()
 const setPotentialTenor = (v: Person | undefined) => (potentialTenor.value = v)
@@ -49,7 +64,11 @@ const setPotentialBass = (v: Person | undefined) => (potentialBass.value = v)
       <template
         v-if="isValidPartialQuartet(potentialTenor, potentialLead, potentialBari, potentialBass)"
       >
-        Valid Quartet!
+        <template v-if="potentialTenor && potentialLead && potentialBari && potentialBass">
+          Valid Quartet!
+          <v-btn @click="assignQuartet">Assign</v-btn>
+        </template>
+        <template v-else>Valid Partial Quartet!</template>
       </template>
       <template
         v-else-if="isValidPartialQuartet(undefined, potentialLead, potentialBari, potentialBass)"

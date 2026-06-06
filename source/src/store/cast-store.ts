@@ -57,6 +57,13 @@ const useCastStore = defineStore('cast-store', () => {
     localStorage.setItem(QUARTETS_LOCAL_STORAGE_KEY, JSON.stringify(quartets.value)),
   )
 
+  const setQuartet = (q: Quartet) => {
+    if (q.tenor && q.lead && q.bari && q.bass) {
+      const code = `${q.tenor.code}-${q.lead.code}-${q.bari.code}-${q.bass.code}`
+      quartets.value = { ...quartets.value, [code]: q }
+    }
+  }
+
   const unassigned = computed(() => {
     console.log('Computing Unassigned')
     const available: Person[] = []
@@ -115,7 +122,7 @@ const useCastStore = defineStore('cast-store', () => {
     return potentialQuartets
   }
 
-  return { people, setPerson, quartets, unassigned, randomizeQuartets }
+  return { people, setPerson, quartets, setQuartet, unassigned, randomizeQuartets }
 })
 
 export default useCastStore

@@ -11,8 +11,9 @@ const people = computed(() => store.people)
 const unassignedList = ref<string[]>([])
 
 const pushUnassigned = (v: string) => unassignedList.value.push(v)
+const resetUnassigned = () => (unassignedList.value = store.unassigned.map((v) => v.code))
 
-onMounted(() => (unassignedList.value = store.unassigned.map((v) => v.code)))
+onMounted(resetUnassigned)
 </script>
 
 <template>
@@ -25,8 +26,7 @@ onMounted(() => (unassignedList.value = store.unassigned.map((v) => v.code)))
         </div>
       </draggable>
     </div>
-
-    <potential-quartet :push-unassigned="pushUnassigned" />
+    <potential-quartet :push-unassigned="pushUnassigned" :reset-unassigned="resetUnassigned" />
   </div>
 </template>
 
