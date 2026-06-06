@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import PersonChip from '@/component/PersonChip.vue'
+import PersonChip from '@/component/cast-list/PersonChip.vue'
 import type { Quartet } from '@/store/cast-store'
 
 defineProps<{ quartet: Quartet }>()

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MenuBar from '@/component/MenuBar.vue'
+import MenuBar from '@/component/menu/MenuBar.vue'
 </script>
 
 <template>

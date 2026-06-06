@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import DraggableCast from '@/component/DraggableCast.vue'
-import PersonChip from '@/component/PersonChip.vue'
-import QuartetCard from '@/component/QuartetCard.vue'
+import DraggableCast from '@/component/cast-list/DraggableCast.vue'
+import PersonChip from '@/component/cast-list/PersonChip.vue'
+import QuartetCard from '@/component/cast-list/QuartetCard.vue'
 import useCastStore, { type Quartet } from '@/store/cast-store'
 import { computed, ref } from 'vue'
 

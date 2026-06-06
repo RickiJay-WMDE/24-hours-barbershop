@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import LangMenu from '@/component/menu/LangMenu.vue'
 import logo from '@/media/24HRS_LOGO.svg'
 import { mdiMenu } from '@mdi/js'
 import { useWindowSize } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
-import LangMenu from './LangMenu.vue'
 
 const { t } = useI18n()
 const { width } = useWindowSize()

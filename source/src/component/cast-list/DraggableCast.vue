@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import PersonChip from '@/component/PersonChip.vue'
+import PersonChip from '@/component/cast-list/PersonChip.vue'
 import useCastStore, { type Person } from '@/store/cast-store'
 import isValidPartialQuartet from '@/util/valid-partial-quartet'
 import { mdiClose, mdiThumbUpOutline } from '@mdi/js'

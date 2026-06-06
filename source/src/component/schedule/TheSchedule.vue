@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ScheduleItem from '@/component/ScheduleItem.vue'
+import ScheduleItem from '@/component/schedule/ScheduleItem.vue'
 import { eventStartDate } from '@/dates.ts'
 import { addHours, addMinutes } from 'date-fns'
 import { useI18n } from 'vue-i18n'
