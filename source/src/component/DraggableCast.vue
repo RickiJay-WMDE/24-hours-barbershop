@@ -2,7 +2,7 @@
 import PersonChip from '@/component/PersonChip.vue'
 import useCastStore, { type Person } from '@/store/cast-store'
 import isValidPartialQuartet from '@/util/valid-partial-quartet'
-import { mdiThumbDownOutline, mdiThumbUpOutline } from '@mdi/js'
+import { mdiClose, mdiThumbUpOutline } from '@mdi/js'
 import { computed, onMounted, ref, watch } from 'vue'
 import { VueDraggableNext as draggable } from 'vue-draggable-next'
 
@@ -100,7 +100,7 @@ onMounted(() => (unassignedList.value = store.unassigned.map((v) => v.code)))
               :icon="
                 isValidPartialQuartet(potentialTenor, undefined, undefined, undefined)
                   ? mdiThumbUpOutline
-                  : mdiThumbDownOutline
+                  : mdiClose
               "
             />
           </div>
@@ -125,7 +125,7 @@ onMounted(() => (unassignedList.value = store.unassigned.map((v) => v.code)))
               :icon="
                 isValidPartialQuartet(undefined, potentialLead, undefined, undefined)
                   ? mdiThumbUpOutline
-                  : mdiThumbDownOutline
+                  : mdiClose
               "
             />
           </div>
@@ -150,7 +150,7 @@ onMounted(() => (unassignedList.value = store.unassigned.map((v) => v.code)))
               :icon="
                 isValidPartialQuartet(undefined, undefined, potentialBari, undefined)
                   ? mdiThumbUpOutline
-                  : mdiThumbDownOutline
+                  : mdiClose
               "
             />
           </div>
@@ -172,10 +172,10 @@ onMounted(() => (unassignedList.value = store.unassigned.map((v) => v.code)))
           <div class="valid">
             <v-icon
               v-if="potentialBass"
-              :item="
+              :icon="
                 isValidPartialQuartet(undefined, undefined, undefined, potentialBass)
                   ? mdiThumbUpOutline
-                  : mdiThumbDownOutline
+                  : mdiClose
               "
             />
           </div>
@@ -194,5 +194,18 @@ onMounted(() => (unassignedList.value = store.unassigned.map((v) => v.code)))
   display: flex;
   flex-flow: row wrap;
   gap: 16px;
+}
+.voice {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  gap: 6px;
+  margin: 6px 0;
+  .assign {
+    flex-grow: 1;
+    .drag-area {
+      min-height: 32px;
+    }
+  }
 }
 </style>
