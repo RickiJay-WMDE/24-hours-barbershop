@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import WelcomeForm from '@/component/WelcomeForm.vue';
+import TheCast from '@/component/TheCast.vue';
 </script>
 
 <template>
-  <welcome-form />
+  <the-cast />
 </template>
 
 <style lang="scss"></style>
