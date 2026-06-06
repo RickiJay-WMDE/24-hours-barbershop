@@ -34,19 +34,17 @@ const submit = () => {
     return
   }
 
-  if (code.value && name.value) {
-    console.log('Submitting')
-    store.setPerson({
-      code: code.value,
-      name: name.value,
-      pronouns: pronouns.value,
-      rangeOptions: {
-        upper: { tenor: u_t.value, lead: u_l.value, bari: u_br.value, bass: u_bs.value },
-        mixed: { tenor: m_t.value, lead: m_l.value, bari: m_br.value, bass: m_bs.value },
-        lower: { tenor: l_t.value, lead: l_l.value, bari: l_br.value, bass: l_bs.value },
-      },
-    })
-  }
+  console.log('Submitting')
+  store.setPerson({
+    code: code.value,
+    name: name.value,
+    pronouns: pronouns.value,
+    rangeOptions: {
+      upper: { tenor: u_t.value, lead: u_l.value, bari: u_br.value, bass: u_bs.value },
+      mixed: { tenor: m_t.value, lead: m_l.value, bari: m_br.value, bass: m_bs.value },
+      lower: { tenor: l_t.value, lead: l_l.value, bari: l_br.value, bass: l_bs.value },
+    },
+  })
 }
 </script>
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import WelcomeForm from '@/component/WelcomeForm.vue';
+import WelcomeForm from '@/component/WelcomeForm.vue'
 </script>
 
 <template>

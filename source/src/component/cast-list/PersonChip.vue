@@ -5,7 +5,7 @@ import {
   type Person,
   type RangeType,
   type VoiceRange,
-} from '@/store/cast-store';
+} from '@/store/cast-store'
 
 defineProps<{ person: Person; range?: RangeType }>()
 

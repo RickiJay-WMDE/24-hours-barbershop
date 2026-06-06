@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TheCast from '@/component/TheCast.vue';
+import TheCast from '@/component/TheCast.vue'
 </script>
 
 <template>
