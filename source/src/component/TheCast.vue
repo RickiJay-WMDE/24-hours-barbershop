@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import DraggableCast from '@/component/DraggableCast.vue'
 import PersonChip from '@/component/PersonChip.vue'
 import QuartetCard from '@/component/QuartetCard.vue'
 import useCastStore, { type Quartet } from '@/store/cast-store'
@@ -26,6 +27,7 @@ const randomize = () => (randomResults.value = store.randomizeQuartets())
         <person-chip v-for="(person, code) in unassigned" :key="code" :person="person" />
       </v-container>
     </v-container>
+    <draggable-cast />
   </v-container>
   <v-container>
     <v-container>Random</v-container>
