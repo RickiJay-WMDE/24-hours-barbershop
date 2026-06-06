@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import PersonChip from '@/component/PersonChip.vue'
 import useCastStore from '@/store/cast-store'
 import { computed, onMounted, ref, watch } from 'vue'
 import { VueDraggableNext as draggable } from 'vue-draggable-next'
-import PersonChip from './PersonChip.vue'
 
 const store = useCastStore()
 
