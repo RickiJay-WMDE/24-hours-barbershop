@@ -1,3 +1,4 @@
+import isValidQuartet from '@/util/valid-quartet'
 import { defineStore } from 'pinia'
 import { computed, ref, watch } from 'vue'
 
@@ -20,6 +21,7 @@ export type Quartet = {
   lead: Person | undefined
   bari: Person | undefined
   bass: Person | undefined
+  range?: QuartetType
 }
 
 const SINGERS_LOCAL_STORAGE_KEY = 'singers'
@@ -38,51 +40,6 @@ const getStoredQuartets = (): Record<string, Quartet> | undefined => {
   if (storedQuartetsRaw) {
     return JSON.parse(storedQuartetsRaw) as Record<string, Quartet>
   }
-}
-
-const allCombinations = (candidates: Person[]): Quartet[] => {
-  const indices = [...candidates.keys()]
-
-  return indices.flatMap((tIdx) =>
-    indices
-      .filter((i) => i != tIdx)
-      .flatMap((lIdx) =>
-        indices
-          .filter((i) => i != tIdx && i != lIdx)
-          .flatMap((brIdx) =>
-            indices
-              .filter((i) => i != tIdx && i != lIdx && i != brIdx)
-              .map((bsIdx) => ({
-                tenor: candidates[tIdx],
-                lead: candidates[lIdx],
-                bari: candidates[brIdx],
-                bass: candidates[bsIdx],
-              })),
-          ),
-      ),
-  )
-}
-
-const isValidQuartet = (candidates: Person[]): false | Quartet => {
-  if (candidates.length != 4) {
-    console.error('Wrong Number', candidates)
-    return false
-  }
-
-  for (const pQuartet of allCombinations(candidates)) {
-    for (const qType of qTypeList) {
-      if (
-        pQuartet.tenor?.rangeOptions?.[qType].tenor &&
-        pQuartet.lead?.rangeOptions?.[qType].lead &&
-        pQuartet.bari?.rangeOptions?.[qType].bari &&
-        pQuartet.bass?.rangeOptions?.[qType].bass
-      ) {
-        return pQuartet
-      }
-    }
-  }
-
-  return false
 }
 
 const useCastStore = defineStore('cast-store', () => {

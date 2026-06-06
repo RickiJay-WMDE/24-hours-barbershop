@@ -5,7 +5,11 @@ const isValidPartialQuartet = (
   lead: Person | undefined,
   bari: Person | undefined,
   bass: Person | undefined,
-): false | Quartet => {
+): undefined | false | Quartet => {
+  if (!tenor && !lead && !bari && !bass) {
+    return
+  }
+
   for (const qType of qTypeList) {
     if (
       (!tenor || tenor.rangeOptions?.[qType].tenor) &&
@@ -13,7 +17,7 @@ const isValidPartialQuartet = (
       (!bari || bari.rangeOptions?.[qType].bari) &&
       (!bass || bass.rangeOptions?.[qType].bass)
     ) {
-      return { tenor, lead, bari, bass }
+      return { tenor, lead, bari, bass, range: qType }
     }
   }
 
