@@ -38,17 +38,20 @@ const potentialVoice = computed((): Person | undefined =>
 )
 watch(potentialVoice, () => setPotentialVoice(potentialVoice.value))
 
-const valid = computed(() =>
-  voice == 'tenor'
-    ? isValidPartialQuartet(potentialVoice.value, undefined, undefined, undefined)
-    : voice == 'lead'
-      ? isValidPartialQuartet(undefined, potentialVoice.value, undefined, undefined)
-      : voice == 'bari'
-        ? isValidPartialQuartet(undefined, undefined, potentialVoice.value, undefined)
-        : voice == 'bass'
-          ? isValidPartialQuartet(undefined, undefined, undefined, potentialVoice.value)
-          : false,
-)
+const valid = computed(() => {
+  switch (voice) {
+    case 'tenor':
+      return isValidPartialQuartet(potentialVoice.value, undefined, undefined, undefined)
+    case 'lead':
+      return isValidPartialQuartet(undefined, potentialVoice.value, undefined, undefined)
+    case 'bari':
+      return isValidPartialQuartet(undefined, undefined, potentialVoice.value, undefined)
+    case 'bass':
+      return isValidPartialQuartet(undefined, undefined, undefined, potentialVoice.value)
+    default:
+      return false
+  }
+})
 </script>
 
 <template>
