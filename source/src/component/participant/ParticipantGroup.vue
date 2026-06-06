@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Participant from '@/component/participant/ParticipantComponent.vue';
-import { useI18n } from 'vue-i18n';
+import Participant from '@/component/participant/ParticipantComponent.vue'
+import { useI18n } from 'vue-i18n'
 
 const { t, tm } = useI18n()
 </script>

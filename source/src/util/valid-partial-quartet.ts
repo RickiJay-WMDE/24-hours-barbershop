@@ -1,11 +1,11 @@
-import { qTypeList, type Person, type Quartet } from '@/store/cast-store'
+import { qTypeList, type PartialQuartet, type Person } from '@/store/cast-store'
 
 const isValidPartialQuartet = (
   tenor: Person | undefined,
   lead: Person | undefined,
   bari: Person | undefined,
   bass: Person | undefined,
-): undefined | false | Quartet => {
+): undefined | false | PartialQuartet => {
   if (!tenor && !lead && !bari && !bass) {
     return
   }

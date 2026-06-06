@@ -9,18 +9,18 @@ defineProps<{ quartet: Quartet }>()
   <v-card class="quartet">
     <v-container class="mx-0 pa-0">
       Tenor:
-      <person-chip v-if="quartet.tenor" :person="quartet.tenor" range="tenor" />
+      <person-chip :person="quartet.tenor" range="tenor" />
     </v-container>
     <v-container class="mx-0 pa-0">
       Lead:
-      <person-chip v-if="quartet.lead" :person="quartet.lead" range="lead" />
+      <person-chip :person="quartet.lead" range="lead" />
     </v-container>
     <v-container class="mx-0 pa-0">
       Bari:
-      <person-chip v-if="quartet.bari" :person="quartet.bari" range="bari" />
+      <person-chip :person="quartet.bari" range="bari" />
     </v-container>
     <v-container class="mx-0 pa-0">
-      Bass: <person-chip v-if="quartet.bass" :person="quartet.bass" range="bass" />
+      Bass: <person-chip :person="quartet.bass" range="bass" />
     </v-container>
   </v-card>
 </template>

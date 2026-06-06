@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import PotentialQuartetVoice from '@/component/cast-list/PotentialQuartetVoice.vue';
-import useCastStore, { type Person } from '@/store/cast-store';
-import isValidPartialQuartet from '@/util/valid-partial-quartet';
-import { ref } from 'vue';
+import PotentialQuartetVoice from '@/component/cast-list/PotentialQuartetVoice.vue'
+import useCastStore, { type Person } from '@/store/cast-store'
+import isValidPartialQuartet from '@/util/valid-partial-quartet'
+import { ref } from 'vue'
 
 const { pushUnassigned, resetUnassigned } = defineProps<{
   pushUnassigned: (v: string) => void
@@ -12,13 +12,15 @@ const { pushUnassigned, resetUnassigned } = defineProps<{
 const store = useCastStore()
 
 const assignQuartet = () => {
-  store.setQuartet({
-    tenor: potentialTenor.value,
-    lead: potentialLead.value,
-    bari: potentialBari.value,
-    bass: potentialBass.value,
-  })
-  resetUnassigned()
+  if (potentialTenor.value && potentialLead.value && potentialBari.value && potentialBass.value) {
+    store.setQuartet({
+      tenor: potentialTenor.value,
+      lead: potentialLead.value,
+      bari: potentialBari.value,
+      bass: potentialBass.value,
+    })
+    resetUnassigned()
+  }
 }
 
 const potentialTenor = ref<Person | undefined>()

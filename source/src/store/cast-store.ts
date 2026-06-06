@@ -16,13 +16,14 @@ export type Person = {
   rangeOptions: VoiceRange
 }
 
-export type Quartet = {
+export type PartialQuartet = {
   tenor: Person | undefined
   lead: Person | undefined
   bari: Person | undefined
   bass: Person | undefined
   range?: QuartetType
 }
+export type Quartet = { tenor: Person; lead: Person; bari: Person; bass: Person }
 
 const SINGERS_LOCAL_STORAGE_KEY = 'singers'
 
@@ -58,10 +59,8 @@ const useCastStore = defineStore('cast-store', () => {
   )
 
   const setQuartet = (q: Quartet) => {
-    if (q.tenor && q.lead && q.bari && q.bass) {
-      const code = `${q.tenor.code}-${q.lead.code}-${q.bari.code}-${q.bass.code}`
-      quartets.value = { ...quartets.value, [code]: q }
-    }
+    const code = `${q.tenor.code}-${q.lead.code}-${q.bari.code}-${q.bass.code}`
+    quartets.value = { ...quartets.value, [code]: q }
   }
 
   const unassigned = computed(() => {
