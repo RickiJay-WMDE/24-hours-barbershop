@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import RegistryCountdown from '@/component/RegistryCountdown.vue'
 import { confirmationDate, eventStartDate, registrationDeadline } from '@/dates'
 import { mdiArrowRight } from '@mdi/js'
 import { useI18n } from 'vue-i18n'
-import RegistryCountdown from './RegistryCountdown.vue'
 
 const { t, locale } = useI18n()
 </script>
