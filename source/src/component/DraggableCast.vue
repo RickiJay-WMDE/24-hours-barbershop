@@ -54,5 +54,8 @@ const onListChange = (event: unknown) => {
 <style lang="scss">
 .drag-area {
   min-height: 60px;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 16px;
 }
 </style>
