@@ -1,101 +1,62 @@
 <script setup lang="ts">
 import PotentialQuartetVoice from '@/component/cast-list/PotentialQuartetVoice.vue'
-import useCastStore, { type Person } from '@/store/cast-store'
-import isValidPartialQuartet from '@/util/valid-partial-quartet'
+import ValidPotentialButton from '@/component/cast-list/ValidPotentialButton.vue'
+import type { Person } from '@/store/cast-store'
 import { ref } from 'vue'
 
-const { pushUnassigned, resetUnassigned } = defineProps<{
+defineProps<{
   pushUnassigned: (v: string) => void
   resetUnassigned: () => void
 }>()
 
-const store = useCastStore()
-
-const assignQuartet = () => {
-  if (potentialTenor.value && potentialLead.value && potentialBari.value && potentialBass.value) {
-    store.setQuartet({
-      tenor: potentialTenor.value,
-      lead: potentialLead.value,
-      bari: potentialBari.value,
-      bass: potentialBass.value,
-    })
-    resetUnassigned()
-  }
-}
-
-const potentialTenor = ref<Person | undefined>()
-const setPotentialTenor = (v: Person | undefined) => (potentialTenor.value = v)
-const potentialLead = ref<Person | undefined>()
-const setPotentialLead = (v: Person | undefined) => (potentialLead.value = v)
-const potentialBari = ref<Person | undefined>()
-const setPotentialBari = (v: Person | undefined) => (potentialBari.value = v)
-const potentialBass = ref<Person | undefined>()
-const setPotentialBass = (v: Person | undefined) => (potentialBass.value = v)
+const tenor = ref<Person | undefined>()
+const setTenor = (v: Person | undefined) => (tenor.value = v)
+const lead = ref<Person | undefined>()
+const setLead = (v: Person | undefined) => (lead.value = v)
+const bari = ref<Person | undefined>()
+const setBari = (v: Person | undefined) => (bari.value = v)
+const bass = ref<Person | undefined>()
+const setBass = (v: Person | undefined) => (bass.value = v)
 </script>
 
 <template>
-  <div class="potential-quartet">
-    <div class="voices">
+  <v-card class="potential-quartet">
+    <v-card-text class="voices">
       <potential-quartet-voice
         label="Tenor"
         voice="tenor"
         :push-unassigned="pushUnassigned"
-        :set-potential-voice="setPotentialTenor"
+        :set-potential-voice="setTenor"
       />
       <potential-quartet-voice
         label="Lead"
         voice="lead"
         :push-unassigned="pushUnassigned"
-        :set-potential-voice="setPotentialLead"
+        :set-potential-voice="setLead"
       />
       <potential-quartet-voice
         label="Bari"
         voice="bari"
         :push-unassigned="pushUnassigned"
-        :set-potential-voice="setPotentialBari"
+        :set-potential-voice="setBari"
       />
       <potential-quartet-voice
         label="Bass"
         voice="bass"
         :push-unassigned="pushUnassigned"
-        :set-potential-voice="setPotentialBass"
+        :set-potential-voice="setBass"
       />
-    </div>
-    <div class="valid">
-      <template
-        v-if="isValidPartialQuartet(potentialTenor, potentialLead, potentialBari, potentialBass)"
-      >
-        <template v-if="potentialTenor && potentialLead && potentialBari && potentialBass">
-          Valid Quartet!
-          <v-btn @click="assignQuartet">Assign</v-btn>
-        </template>
-        <template v-else>Valid Partial Quartet!</template>
-      </template>
-      <template
-        v-else-if="isValidPartialQuartet(undefined, potentialLead, potentialBari, potentialBass)"
-      >
-        Change Tenor
-      </template>
-      <template
-        v-else-if="isValidPartialQuartet(potentialTenor, undefined, potentialBari, potentialBass)"
-      >
-        Change Lead
-      </template>
-      <template
-        v-else-if="isValidPartialQuartet(potentialTenor, potentialLead, undefined, potentialBass)"
-      >
-        Change Bari
-      </template>
-      <template
-        v-else-if="isValidPartialQuartet(potentialTenor, potentialLead, potentialBari, undefined)"
-      >
-        Change Bass
-      </template>
-      <template v-else-if="potentialTenor || potentialLead || potentialBari || potentialBass">
-        Invalid Combo
-      </template>
-    </div>
-  </div>
+    </v-card-text>
+    <v-card-actions class="valid">
+      <valid-potential-button
+        :tenor="tenor"
+        :lead="lead"
+        :bari="bari"
+        :bass="bass"
+        :reset-unassigned="resetUnassigned"
+      />
+    </v-card-actions>
+  </v-card>
 </template>
 
 <style lang="scss"></style>
