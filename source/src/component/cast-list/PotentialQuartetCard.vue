@@ -34,8 +34,7 @@ const setPotentialBass = (v: Person | undefined) => (potentialBass.value = v)
 </script>
 
 <template>
-  <div class="list-column">
-    <h3>Potential Quartet</h3>
+  <div class="potential-quartet">
     <div class="voices">
       <potential-quartet-voice
         label="Tenor"
