@@ -41,26 +41,30 @@ onMounted(resetUnassigned)
         </div>
       </draggable>
     </div>
-    <div>
-      <h3>Potential Quartet</h3>
-      <potential-quartet-card
-        :push-unassigned="pushUnassigned"
-        :reset-unassigned="resetUnassigned"
-      />
-    </div>
-    <div>
-      <h3>Random</h3>
-      <v-btn @click="randomize">Randomize</v-btn>
-      <div>
-        <potential-quartet-card
-          v-for="(quartet, idx) in randomResults"
-          :key="idx"
-          :push-unassigned="pushUnassigned"
-          :reset-unassigned="resetUnassigned"
-          :starting-quartet="quartet"
-        />
-      </div>
-    </div>
+    <v-expansion-panels>
+      <v-expansion-panel title="Potential Quartet">
+        <v-expansion-panel-text>
+          <potential-quartet-card
+            :push-unassigned="pushUnassigned"
+            :reset-unassigned="resetUnassigned"
+          />
+        </v-expansion-panel-text>
+      </v-expansion-panel>
+      <v-expansion-panel title="Randomize">
+        <v-expansion-panel-text>
+          <v-btn @click="randomize">Randomize</v-btn>
+          <div>
+            <potential-quartet-card
+              v-for="(quartet, idx) in randomResults"
+              :key="idx"
+              :push-unassigned="pushUnassigned"
+              :reset-unassigned="resetUnassigned"
+              :starting-quartet="quartet"
+            />
+          </div>
+        </v-expansion-panel-text>
+      </v-expansion-panel>
+    </v-expansion-panels>
   </div>
 </template>
 
