@@ -2,7 +2,7 @@
 import PersonChip from '@/component/cast-list/PersonChip.vue'
 import PotentialQuartetCard from '@/component/cast-list/PotentialQuartetCard.vue'
 import useCastStore, { type Quartet } from '@/store/cast-store'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import { VueDraggableNext as draggable } from 'vue-draggable-next'
 
 const store = useCastStore()
@@ -10,6 +10,14 @@ const store = useCastStore()
 const people = computed(() => store.people)
 const unassignedList = ref<string[]>([])
 const randomResults = ref<Quartet[]>([])
+watch(randomResults, () =>
+  randomResults.value.forEach(
+    (q) =>
+      (unassignedList.value = unassignedList.value.filter(
+        (v) => q.tenor.code != v && q.lead.code != v && q.bari.code != v && q.bass.code != v,
+      )),
+  ),
+)
 
 const pushUnassigned = (v: string) => unassignedList.value.push(v)
 const randomize = () => (randomResults.value = store.randomizeQuartets())
@@ -47,9 +55,9 @@ onMounted(resetUnassigned)
         <potential-quartet-card
           v-for="(quartet, idx) in randomResults"
           :key="idx"
-          :quartet="quartet"
           :push-unassigned="pushUnassigned"
           :reset-unassigned="resetUnassigned"
+          :starting-quartet="quartet"
         />
       </div>
     </div>

@@ -6,10 +6,11 @@ import { mdiClose, mdiThumbUpOutline } from '@mdi/js'
 import { computed, inject, ref, watch, type Ref } from 'vue'
 import { VueDraggableNext as draggable } from 'vue-draggable-next'
 
-const { pushUnassigned, setPotentialVoice, voice } = defineProps<{
+const { pushUnassigned, setPotentialVoice, startingVoice, voice } = defineProps<{
   label: string
   pushUnassigned: (v: string) => void
   setPotentialVoice: (v: Person | undefined) => void
+  startingVoice?: string
   voice: RangeType
 }>()
 
@@ -19,7 +20,7 @@ const store = useCastStore()
 const people = computed(() => store.people)
 const unassignedCodes = computed(() => store.unassigned.map((v) => v.code))
 
-const potentialVoiceList = ref<string[]>([])
+const potentialVoiceList = ref<string[]>(startingVoice ? [startingVoice] : [])
 watch(potentialVoiceList, () => {
   while (potentialVoiceList.value.length > 1) {
     const shifted = potentialVoiceList.value.shift()
