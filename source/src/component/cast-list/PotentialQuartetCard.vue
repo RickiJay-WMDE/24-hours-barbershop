@@ -2,9 +2,9 @@
 import PotentialQuartetVoice from '@/component/cast-list/PotentialQuartetVoice.vue'
 import ValidPotentialButton from '@/component/cast-list/ValidPotentialButton.vue'
 import type { Person } from '@/store/cast-store'
-import { ref } from 'vue'
+import { provide, ref } from 'vue'
 
-defineProps<{
+const { pushUnassigned } = defineProps<{
   pushUnassigned: (v: string) => void
   resetUnassigned: () => void
 }>()
@@ -17,6 +17,29 @@ const bari = ref<Person | undefined>()
 const setBari = (v: Person | undefined) => (bari.value = v)
 const bass = ref<Person | undefined>()
 const setBass = (v: Person | undefined) => (bass.value = v)
+
+const resetBoolean = ref(false)
+provide('reset-boolean', resetBoolean)
+
+const clear = () => {
+  if (tenor.value) {
+    pushUnassigned(tenor.value.code)
+    setTenor(undefined)
+  }
+  if (lead.value) {
+    pushUnassigned(lead.value.code)
+    setLead(undefined)
+  }
+  if (bari.value) {
+    pushUnassigned(bari.value.code)
+    setBari(undefined)
+  }
+  if (bass.value) {
+    pushUnassigned(bass.value.code)
+    setBass(undefined)
+  }
+  resetBoolean.value = !resetBoolean.value
+}
 </script>
 
 <template>
@@ -48,6 +71,7 @@ const setBass = (v: Person | undefined) => (bass.value = v)
       />
     </v-card-text>
     <v-card-actions class="valid">
+      <v-btn v-if="tenor || lead || bari || bass" @click="clear">Clear</v-btn>
       <valid-potential-button
         :tenor="tenor"
         :lead="lead"

@@ -3,7 +3,7 @@ import PersonChip from '@/component/cast-list/PersonChip.vue'
 import useCastStore, { type Person, type RangeType } from '@/store/cast-store'
 import isValidPartialQuartet from '@/util/valid-partial-quartet'
 import { mdiClose, mdiThumbUpOutline } from '@mdi/js'
-import { computed, ref, watch } from 'vue'
+import { computed, inject, ref, watch, type Ref } from 'vue'
 import { VueDraggableNext as draggable } from 'vue-draggable-next'
 
 const { pushUnassigned, setPotentialVoice, voice } = defineProps<{
@@ -12,6 +12,8 @@ const { pushUnassigned, setPotentialVoice, voice } = defineProps<{
   setPotentialVoice: (v: Person | undefined) => void
   voice: RangeType
 }>()
+
+const resetBoolean: Ref<boolean, boolean> = inject('reset-boolean', ref(false))
 
 const store = useCastStore()
 const people = computed(() => store.people)
@@ -33,6 +35,8 @@ watch(
       unassignedCodes.value.includes(code),
     )),
 )
+watch(resetBoolean, () => (potentialVoiceList.value = []))
+
 const potentialVoice = computed((): Person | undefined =>
   potentialVoiceList.value[0] ? people.value[potentialVoiceList.value[0]] : undefined,
 )
