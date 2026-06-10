@@ -66,9 +66,9 @@ const submit = () => {
         <tbody>
           <tr>
             <td></td>
-            <td class="voice-label header-text">Upper Voices</td>
-            <td class="voice-label header-text">Mixed Voices</td>
-            <td class="voice-label header-text">Lower Voices</td>
+            <td class="voice-label header-text">SSAA</td>
+            <td class="voice-label header-text">SATB</td>
+            <td class="voice-label header-text">TTBB</td>
           </tr>
           <tr>
             <td class="voice-label header-text">Tenor</td>
